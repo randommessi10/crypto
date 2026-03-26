@@ -1,5 +1,5 @@
-def encrypt(text, key):
-    while (len(text) % len(key) != 0):
+def encrypt(plaintext, key):
+    while (len(plaintext) % len(key) != 0):
         text += 'x'
 
     columns = {}
@@ -7,14 +7,14 @@ def encrypt(text, key):
         columns[letter] = ''
 
     position = 0
-    for character in text:
+    for char in plaintext:
         key_char = key[position % len(key)]
-        columns[key_char] = columns[key_char] + character
+        columns[key_char] += char
         position += 1
 
     cipher = ''
     for letter in sorted(key):
-        cipher = cipher + columns[letter]
+        cipher += columns[letter]
 
     return cipher
 
