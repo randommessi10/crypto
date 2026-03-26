@@ -12,11 +12,11 @@ def encrypt(plaintext, key):
         columns[key_char] += char
         position += 1
 
-    cipher = ''
+    ciphertext = ''
     for letter in sorted(key):
-        cipher += columns[letter]
+        ciphertext += columns[letter]
 
-    return cipher
+    return ciphertext
 
 
 def decrypt(cipher, key):
