@@ -1,6 +1,6 @@
 def encrypt(plaintext, key):
     while (len(plaintext) % len(key) != 0):
-        text += 'x'
+        plaintext += 'x'
 
     columns = {}
     for letter in key:
