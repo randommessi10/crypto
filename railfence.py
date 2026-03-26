@@ -1,10 +1,10 @@
-def encrypt(text, rails):
+def encrypt(plaintext, rails):
     fence = [[] for _ in range(rails)]
     
     row = 0
     direction = 1 
 
-    for char in text:
+    for char in plaintext:
         fence[row].append(char)
         row += direction
 
