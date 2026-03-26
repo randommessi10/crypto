@@ -8,9 +8,9 @@ key = 'secret_key'.encode()
 message = 'Hello World'.encode()
 
 # create HMAC
-hmac_result = hmac.new(key, message, hashlib.sha256)
+hmac_object = hmac.new(key, message, hashlib.sha256)
 
 # get hexadecimal result
-final_hmac = hmac_result.hexdigest()
+hmac_result = hmac_object.hexdigest()
 
-print("HMAC:", final_hmac)
+print("HMAC:", hmac_result)
