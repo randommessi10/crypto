@@ -1,21 +1,24 @@
 alphabets=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 
-def encrypt(plaintext):
+def encrypt(plaintext,shift):
     ciphertext = ''
     for i in plaintext:
-        newchar = alphabets[(alphabets.index(i)+3)%26]
+        new_index = (alphabets.index(i)+shift)%26
+        newchar = alphabets[new_index]
         ciphertext += newchar
     return ciphertext
 
-def decrypt(ciphertext):
+def decrypt(ciphertext,shift):
     plaintext = ''
     for i in ciphertext:
-        newchar = alphabets[(alphabets.index(i)-3)%26]
+        new_index = (alphabets.index(i)-shift)%26
+        newchar = alphabets[new_index]
         plaintext += newchar
     return plaintext
 
 text = input("Enter your text: ")
-ciphertext = encrypt(text)
+shift = int(input("Enter shift: "))
+ciphertext = encrypt(text, shift)
 print(f"Encrypted text: {ciphertext}")
-print(f"Decrypted text: {decrypt(ciphertext)}")
+print(f"Decrypted text: {decrypt(ciphertext, shift)}")
     
