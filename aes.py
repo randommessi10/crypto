@@ -2,7 +2,7 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import pad, unpad
 import base64
 
-key = b'1234567890123456'
+key = '1234567890123456'.encode()
 
 text = input("Enter text: ").encode()
 

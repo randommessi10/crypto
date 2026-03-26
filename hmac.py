@@ -2,10 +2,10 @@ import hmac
 import hashlib
 
 # secret key
-key = b'secret_key'
+key = 'secret_key'.encode()
 
 # message
-message = b'Hello World'
+message = 'Hello World'.encode()
 
 # create HMAC
 hmac_result = hmac.new(key, message, hashlib.sha256)
