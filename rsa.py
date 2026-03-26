@@ -1,18 +1,17 @@
-import random
 from math import gcd
 
 # Step 1: Choose primes
-p = 61
-q = 53
+p = int(input("Enter value of p: "))
+q = int(input("Enter value of q: "))
 
 # Step 2: Compute n and phi
 n = p * q
 phi = (p - 1) * (q - 1)
 
 # Step 3: Choose e
-e = random.randrange(2, phi)
+e = 2
 while gcd(e, phi) != 1:
-    e = random.randrange(2, phi)
+    e += 1
 
 # Step 4: Compute d (mod inverse of e)
 d = None
@@ -29,12 +28,12 @@ print("Public key:", public_key)
 print("Private key:", private_key)
 
 # Step 5: Message (number only)
-message = 42
+message = int(input("Enter message: "))
 
 # Step 6: Encrypt
-cipher = pow(message, e, n)
+cipher = message ** e % n
 print("Encrypted:", cipher)
 
 # Step 7: Decrypt
-decrypted = pow(cipher, d, n)
+decrypted = cipher ** d % n
 print("Decrypted:", decrypted)
