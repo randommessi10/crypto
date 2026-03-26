@@ -15,5 +15,5 @@ print("Ciphertext: ", cipher_b64)
 cipher = AES.new(key, AES.MODE_ECB)
 decoded = base64.b64decode(cipher_b64)
 
-plaintext = unpad(cipher.decrypt(decoded),16)
-print("Decrypted:", plaintext.decode())
+plaintext = unpad(cipher.decrypt(decoded),16).decode()
+print("Decrypted:", plaintext)
